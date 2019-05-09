@@ -7,6 +7,11 @@ template '/etc/motd' do
 	action :create
 end
 
+template '/var/www/html/index.html' do
+	source 'index.html.erb'
+	action :create
+end
+
 service 'apache2' do
 	action [ :enable, :start ]
 end
